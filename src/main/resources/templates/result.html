@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Резултат</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Резултат за: <span th:text="${result.studentName}"></span></h1>
+
+<table>
+    <tr>
+        <td>Изпитен процент</td>
+        <td th:text="${result.examPercentage} + '%'"></td>
+    </tr>
+    <tr>
+        <td>Процент присъствие</td>
+        <td th:text="${result.attendancePercentage} + '%'"></td>
+    </tr>
+    <tr>
+        <td>Финален резултат</td>
+        <td th:text="${result.finalScore} + '%'"></td>
+    </tr>
+    <tr>
+        <td>Оценка</td>
+        <td th:text="${result.grade} + ' (' + ${result.gradeLabel} + ')'"></td>
+    </tr>
+</table>
+
+<br>
+<a href="/">← Назад към формата</a>
+
+</body>
+</html>

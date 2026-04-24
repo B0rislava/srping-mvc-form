@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Система за оценяване</title>
+</head>
+<body>
+
+<h1>Оценяване на студент</h1>
+
+<form th:action="@{/grade}" th:object="${studentForm}" method="post">
+
+    <label>Име на студент:</label><br>
+    <label>
+        <input type="text" th:field="*{studentName}" required />
+    </label><br><br>
+
+    <label>Получени точки:</label><br>
+    <label>
+        <input type="number" th:field="*{earnedPoints}" min="0" step="0.01" required />
+    </label><br><br>
+
+    <label>Максимални точки:</label><br>
+    <label>
+        <input type="number" th:field="*{maxPoints}" min="1" step="0.01" required />
+    </label><br><br>
+
+    <label>Процент присъствие (0–100):</label><br>
+    <label>
+        <input type="number" th:field="*{attendancePercentage}" min="0" max="100" step="0.01" required />
+    </label><br><br>
+
+    <button type="submit">Изчисли оценката</button>
+
+</form>
+
+</body>
+</html>
